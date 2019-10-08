@@ -1,11 +1,23 @@
+{% extends 'base.html' %}
+{% block body %}
 
+<form  method="post">
+  <table>
+    <tr>
+      <td> Loan amount: </td> <td> <input type="text" name="A" /> </td>
+    </tr>
+    <tr>
+      <td> Number of periodic payments: </td> <td> <input type="text" name="N" /> </td>
+    </tr>
+    <tr>
+      <td> Periodic interest rate: </td> <td> <input type="text" name="I" /> </td>
+    </tr>
 
-  {% extends 'base.html' %}
+  </table>
+    <br>
+  <input class="button" type="submit" formaction="/loan" value="Calculate Discount and Loan!" />
+</form>
 
-  {% block body %}
-
-	   <h2> This is my Flask server! </h2>
-
-	   <img src="{{ url_for('static', filename='images/flask.jpg') }}" />
-
-  {% endblock %}
+<p> {{display }} </p>
+<div style="clear:both;"></div>
+{% endblock %}
